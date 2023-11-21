@@ -1,4 +1,5 @@
 import java.util.*
+import kotlin.collections.ArrayList
 
 fun main() {
     println("Hello World!")
@@ -35,6 +36,73 @@ fun main() {
     val sumaUno = Suma(1,1)
     val sumaDos = Suma(null,1)
     val sumaTres = Suma(1,null)
+    val sumaCuatro = Suma(null,null)
+    sumaUno.sumar()
+    sumaDos.sumar()
+    sumaTres.sumar()
+    sumaCuatro.sumar()
+    println(Suma.pi)
+    println(Suma.elevarAlCuadrado(2))
+    println(Suma.historialSumas)
+
+    val arregloEstatico: Array<Int> = arrayOf(1,2,3)
+    println(arregloEstatico)
+
+    val arregloDinamico: ArrayList<Int> = arrayListOf<Int>(
+        1,2,3,4,5,6,7,8,9,10
+        )
+    println(arregloDinamico)
+
+    println(arregloDinamico)
+    arregloDinamico.add(11)
+    arregloDinamico.add(12)
+    println(arregloDinamico)
+    val respuestaForEach: Unit= arregloDinamico
+        .forEach {valorActual: Int->
+            println("Valor actual:${valorActual}")
+        }
+    arregloDinamico.forEach { println(it) }
+    arregloDinamico
+        .forEachIndexed{indice:Int,valorActual:Int->
+            println("valor ${valorActual} indice:${indice}")
+        }
+    //nuevo arreglo con valores modificados
+    val respuestaMap: List<Double> =arregloDinamico
+        .map{valorActual: Int ->
+            return@map valorActual.toDouble()+100.00
+        }
+    println(respuestaMap)
+    val respuestaMapDos =arregloDinamico.map{it+15}
+    //nuevo arreglo filtrado (true or false)
+    val respuestaFilter: List<Int> = arregloDinamico
+        .filter { valorActual:Int->
+            val mayoresACinco: Boolean = valorActual > 5
+            return@filter mayoresACinco
+        }
+    val respuestaFilterDos = arregloDinamico.filter { it<=5 }
+    println(respuestaFilter)
+    println(respuestaFilterDos)
+
+    //OR --> ANY(Alguno cumple?)
+    //AND --> ALL(Todos cumplen?)
+    val respuestaAny: Boolean = arregloDinamico
+        .any{ valorActual:Int->
+            return@any(valorActual>5)
+        }
+    println(respuestaAny)//true
+
+    val respuestaAll: Boolean = arregloDinamico
+        .all { valorActual:Int ->
+            return@all(valorActual>5)
+        }
+    println(respuestaAll)//false
+
+    val respuestaReduce: Int = arregloDinamico
+        .reduce{
+            acumulado: Int,valorActual:Int ->
+            return@reduce(acumulado + valorActual)
+        }
+    println(respuestaReduce)//78
 }
 fun imprimirNombre(nombre: String){
     // template strings
@@ -97,4 +165,29 @@ class Suma(   //Constructor Primario Suma
         uno,
         if(dos == null) 0 else uno,
     )
+
+    constructor(
+        uno: Int?,
+        dos: Int?
+    ):this(
+        if(uno == null)0 else uno,
+        if(dos == null)0 else dos
+    )
+    public fun sumar(): Int{
+        val total =numeroUno+numeroDos
+        agregarHistorial(total)
+        return total
+    }
+    companion object {
+        val pi= 3.14
+        fun elevarAlCuadrado(num:Int):Int{
+            return num*num
+        }
+        val historialSumas= arrayListOf<Int>()
+
+        fun agregarHistorial(valorNuevaSuma:Int){
+            historialSumas.add(valorNuevaSuma)
+        }
+    }
 }
+

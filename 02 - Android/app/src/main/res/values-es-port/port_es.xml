@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="descripcion">Buenos dias</string>
+    <color name="textc">#FF66BB6A</color>
+    <color name="fondoc">#FF0E6512</color>
+</resources>

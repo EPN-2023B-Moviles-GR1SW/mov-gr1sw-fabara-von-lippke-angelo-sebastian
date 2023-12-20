@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">b2023-gr1sw-asfv</string>
+    <string name="app_name" translatable="false">b2023-gr1sw-asfv</string>
     <string name="descripcion">Hola, buen dia</string>
+    <string-array name="string_array_opciones_dialogo">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+    </string-array>
     <color name="textc">#101A55</color>
     <color name="fondoc">#F16B6B</color>
 </resources>

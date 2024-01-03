@@ -25,18 +25,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    fun mostrarSnackbar(texto:String){
-        Snackbar
-            .make(
-                findViewById(R.id.id_layout_main),
-                texto,
-                Snackbar.LENGTH_LONG
-            )
-            .show()
-    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        EBaseDeDatos.tablaEntrenador = ESqliteHelperEntrenador(this)
+
         val botonCicloVida = findViewById<Button>(R.id.btn_ciclo_vida)
         botonCicloVida.setOnClickListener{
             irActividad(ACicloVida::class.java)
@@ -62,6 +57,11 @@ class MainActivity : AppCompatActivity() {
         botonIntentExplicito.setOnClickListener {
             abrirActividadConParametros(CIntentExplicitoParametros::class.java)
         }
+        val botonSqlite = findViewById<Button>(R.id.btn_sqlite)
+        botonSqlite
+            .setOnClickListener {
+                irActividad(ECrudEntrenador::class.java)
+            }
     }
 
     private fun abrirActividadConParametros(clase: Class<*>) {
@@ -96,8 +96,18 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    fun mostrarSnackbar(texto:String){
+        Snackbar
+            .make(
+                findViewById(R.id.id_layout_main),
+                texto,
+                Snackbar.LENGTH_LONG
+            )
+            .show()
+    }
     fun irActividad(clase: Class<*>){
         val intent = Intent(this,clase)
         startActivity(intent)
     }
+
 }

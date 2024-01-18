@@ -8,4 +8,5 @@
     </string-array>
     <color name="textc">#101A55</color>
     <color name="fondoc">#F16B6B</color>
+    <string name="title_activity_google_maps_inicio">GoogleMapsInicio</string>
 </resources>

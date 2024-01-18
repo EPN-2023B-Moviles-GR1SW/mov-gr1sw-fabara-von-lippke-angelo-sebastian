@@ -1,0 +1,3 @@
+Futbol,false,94.5,1705424344402,11,
+Basquet,true,93.5,1705588919027,5,
+Volleyball,false,60.0,-845319600000,3,

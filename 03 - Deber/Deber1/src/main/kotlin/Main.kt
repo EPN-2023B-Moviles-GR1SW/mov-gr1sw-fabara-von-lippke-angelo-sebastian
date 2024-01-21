@@ -21,6 +21,7 @@ fun main() {
         when (opcion) {
             0 -> {
                 println("Que tenga un buen día")
+
             }
             1 -> {
                 menuAtletas()

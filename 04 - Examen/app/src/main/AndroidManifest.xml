@@ -13,13 +13,23 @@
         android:theme="@style/Theme.Exame_01"
         tools:targetApi="31">
         <activity
-            android:name=".EntAtleta"
-            android:exported="false"
-            android:label="@string/title_activity_ent_atleta"
-            android:theme="@style/Theme.Exame_01" />
+            android:name=".Atletas"
+            android:exported="false" />
+        <activity
+            android:name=".AtletaUso"
+            android:exported="false" />
+        <activity
+            android:name=".IngresarDeporte"
+            android:exported="false" />
+        <activity
+            android:name=".ActualizarDeporte"
+            android:exported="false" />
+        <activity
+            android:name=".MostrarLista"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.Exame_01">
             <intent-filter>
@@ -28,6 +38,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".EntAtleta"
+            android:exported="false"
+            android:label="@string/title_activity_ent_atleta"
+            android:theme="@style/Theme.Exame_01" />
     </application>
 
 </manifest>

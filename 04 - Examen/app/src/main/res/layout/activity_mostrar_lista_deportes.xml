@@ -18,7 +18,7 @@
             android:id="@+id/input_nombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Nombre de la receta" />
+            android:hint="Nombre del deporte" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -31,7 +31,7 @@
             android:id="@+id/input_precio"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Precio" />
+            android:hint="Tiempo por partido" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -43,7 +43,7 @@
             android:id="@+id/input_porciones"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Porciones por plato"
+            android:hint="jugadores por partido"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,11 +51,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:errorEnabled="true">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_paralelo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Paralelo del estudiante"/>
+            android:hint="Categoria del atleta" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -67,7 +68,7 @@
             android:id="@+id/input_agregacion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Fecha Agregacion Menu"
+            android:hint="Fecha de registro"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 

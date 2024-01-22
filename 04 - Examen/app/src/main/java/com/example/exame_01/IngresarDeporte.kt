@@ -24,7 +24,7 @@ class IngresarDeporte : AppCompatActivity() {
         btnCrear.setOnClickListener {
             if(verificarDatos()){
                 UsoDeporte.agregarDeporte(inputNombre.text.toString(),inputApellido.text.toString().toFloat())
-                Toast.makeText(this, "Estudiante Creado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Atleta creado Creado", Toast.LENGTH_SHORT).show()
                 val intend = Intent(this, MainActivity::class.java)
                 startActivity(intend)
             }else{

@@ -88,13 +88,18 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun abrirActividadConParametros(clase: Class<*>) {
+    private fun abrirActividadConParametros(
+        clase: Class<*>
+    ) {
         val intentExplicito = Intent(this, clase)
         // Enviar parametros (solamente variables primitivas)
         intentExplicito.putExtra("nombre", "Angelo")
         intentExplicito.putExtra("apellido", "Fabara")
-        intentExplicito.putExtra("edad", 22)
-
+        intentExplicito.putExtra("edad",23)
+        intentExplicito.putExtra(
+            "objetoEntrenador",
+            BEntrenador(1,"Angelo","Descripcion")
+        )
         callbackContenidoIntentExplicito.launch(intentExplicito)
     }
 
